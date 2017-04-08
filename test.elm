@@ -37,10 +37,10 @@ update : Msg -> Model -> Model
 update msg model =
   case msg of
     Increment ->
-      { model | test = 3}
+      { model | test = model.test + 1}
 
     Decrement ->
-      { model | test = 4}
+      { model | test = model.test - 1}
 
 
 
