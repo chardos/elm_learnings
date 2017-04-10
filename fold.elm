@@ -4,6 +4,7 @@ import List
 
 
 nums = [1,2,5,4,6]
+words = ["mate", "bro", "bruv"]
 
 sum = List.foldl
     (\a b ->
@@ -12,9 +13,12 @@ sum = List.foldl
 
 sum2 = List.foldl
     (\a b ->
-        Debug.log(toString <| a*b)
-        a * b
-    ) 0 nums
+        let
+            logA = Debug.log "a" a
+            logB = Debug.log "b" b
+        in
+            a
+    ) "guv" words
 
 
 main =
