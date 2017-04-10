@@ -2,12 +2,13 @@ module Main exposing (..)
 import Html exposing (..)
 import List
 
-num = 23
+num = Just 23
 
 foo = case num of
-    0 -> "HEY"
-    1 -> "YO"
-    _ -> "BRO"
+    Just 0 -> "Hey"
+    Just 1 -> "YO"
+    Just _ -> "Anything else"
+    Nothing -> "NUTTIN"
 
 main =
     text foo

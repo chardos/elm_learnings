@@ -1,6 +1,7 @@
-module Main exposing (..)}
+module Main exposing (..)
 import Html exposing (..)
 import List
+import Maybe
 
 type alias Person =
     { name: String
@@ -17,12 +18,13 @@ names peeps = List.map (\peep -> peep.name) peeps
 
 findPerson : String -> List Person -> Maybe Person
 findPerson name peeps = List.foldl
-    (\peep memo -> case memo of
-        Just _ -> memo
-        Nothing -> if peep.name == name then
-            Just peep
+    (\a b -> case b of
+        Just _ -> b
+        Nothing -> if a.name == name then
+            Just a
             else Nothing
     ) Nothing peeps
+
 
 main =
     text <| toString <| findPerson "Legolas" people
