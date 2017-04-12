@@ -16,9 +16,7 @@ people = [
 names : List Person -> List String
 names peeps = List.map (\peep -> peep.name) peeps
 
-tap x =
-    Debug.log(toString <| x)
-    x
+tap x = Debug.log(toString <| x)
 
 findPerson : String -> List Person -> Maybe Person
 findPerson name peeps = List.foldl
